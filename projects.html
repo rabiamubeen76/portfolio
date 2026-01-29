@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Projects | Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        :root {
+            --primary: #4a4e69;
+            --primary-dark: #2f3145;
+            --light-bg: #f8f9fa;
+            --border: #e0e0e0;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        #projects h1 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .project-content {
+            padding: 1.5rem 1.8rem;
+        }
+
+        .project-content h2 {
+            margin-top: 0;
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+        }
+
+        .project-content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        .pdf-container {
+            margin: 0 1.5rem 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--light-bg);
+        }
+
+        .pdf-container embed {
+            width: 100%;
+            height: 420px;
+            border: none;
+        }
+
+        .pdf-fallback {
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 1.5rem 1.8rem;
+        }
+
+        .download-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 78, 105, 0.25);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            #projects h1 {
+                font-size: 2rem;
+            }
+
+            .pdf-container embed {
+                height: 340px;
+            }
+
+            .project-grid {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pdf-container embed {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="projects">
+            <h1>My Projects</h1>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h2>Beauty of Islam</h2>
+                    </div>
+
+                    <div class="pdf-container">
+                        <embed 
+                            src="Beauty of Islam.pdf" 
+                            type="application/pdf"
+                            width="100%" 
+                            height="420px"
+                        />
+                        <!-- Fallback content if embed doesn't work -->
+                        <div class="pdf-fallback" style="display:none;">
+                            <p>Your browser does not support PDF preview.<br>Please download the file instead.</p>
+                        </div>
+                    </div>
+
+                    <a href="Beauty of Islam.pdf" download class="download-btn">
+                        Download PDF
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h2>Project Cover</h2>
+                    </div>
+
+                    <div class="pdf-container">
+                        <embed 
+                            src="Project cover.pdf" 
+                            type="application/pdf"
+                            width="100%" 
+                            height="420px"
+                        />
+                    </div>
+
+                    <a href="Project cover.pdf" download class="download-btn">
+                        Download PDF
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h2>Menu Card Coffee</h2>
+                    </div>
+
+                    <div class="pdf-container">
+                        <embed 
+                            src="Menu card Coffee.pdf" 
+                            type="application/pdf"
+                            width="100%" 
+                            height="420px"
+                        />
+                    </div>
+
+                    <a href="Menu card Coffee.pdf" download class="download-btn">
+                        Download PDF
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h2>Magazine Cover Page</h2>
+                    </div>
+
+                    <div class="pdf-container">
+                        <embed 
+                            src="magzine coverpage complete.pdf" 
+                            type="application/pdf"
+                            width="100%" 
+                            height="420px"
+                        />
+                    </div>
+
+                    <a href="magzine coverpage complete.pdf" download class="download-btn">
+                        Download PDF
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h2>Motivation Magazine</h2>
+                    </div>
+
+                    <div class="pdf-container">
+                        <embed 
+                            src="Motivation magzine complete..pdf" 
+                            type="application/pdf"
+                            width="100%" 
+                            height="420px"
+                        />
+                    </div>
+
+                    <a href="Motivation magzine complete..pdf" download class="download-btn">
+                        Download PDF
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h2>Motivation</h2>
+                    </div>
+
+                    <div class="pdf-container">
+                        <embed 
+                            src="Motivation.pptx" 
+                            type="application/pdf"
+                            width="100%" 
+                            height="420px"
+                        />
+                    </div>
+
+                    <a href="Motivation.pptx" download class="download-btn">
+                        Download PDF
+                    </a>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h2>Project Cover</h2>
+                    </div>
+
+                    <div class="pdf-container">
+                        <embed 
+                            src="Project cover.pdf" 
+                            type="application/pdf"
+                            width="100%" 
+                            height="420px"
+                        />
+                    </div>
+
+                    <a href="Project cover.pdf" download class="download-btn">
+                        Download PDF
+                    </a>
+                </div>
+
+                <!-- Add more project cards here -->
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 [Your Name]. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

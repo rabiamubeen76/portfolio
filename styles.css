@@ -1,0 +1,275 @@
+/* ================ 
+   styles.css 
+   (use this file for ALL pages)
+   ================ */
+
+:root {
+  --color-bg:        #fafafa;
+  --color-surface:   #ffffff;
+  --color-text:      #1a1a1a;
+  --color-text-light:#555555;
+  --color-primary:   #5c4b99;     /* soft deep purple */
+  --color-primary-d: #483875;
+  --color-accent:    #e07a5f;     /* warm coral accent */
+  --color-border:    #e5e5e5;
+  --color-shadow:    0 6px 24px rgba(0,0,0,0.08);
+  --radius-sm:       10px;
+  --radius-md:       16px;
+  --transition:      all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.68;
+  font-size: 1.03rem;
+}
+
+/* ─── Navigation ──────────────────────────────────────── */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229,229,229,0.8);
+  padding: 1.1rem 0;
+  margin-bottom: 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2.8rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  padding: 0.4rem 0.2rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background: var(--color-primary);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+nav a:hover,
+nav a.current {
+  color: var(--color-primary);
+}
+
+nav a:hover::after,
+nav a.current::after {
+  width: 60%;
+}
+
+/* ─── Main content wrapper ────────────────────────────── */
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+
+/* ─── Headings ────────────────────────────────────────── */
+
+h1, h2, h3 {
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-weight: 600;
+  margin: 3.2rem 0 1.4rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 38%;
+  height: 3px;
+  bottom: -8px;
+  left: 0;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: 3px;
+}
+
+/* ─── Cards / Project / Skill blocks ──────────────────── */
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--color-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.11);
+}
+
+/* PDF / Embed container improvements */
+.pdf-container {
+  background: #111;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin: 1.2rem;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.pdf-container embed {
+  width: 100%;
+  height: 460px;
+  border: none;
+}
+
+/* Buttons */
+.btn, button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.82rem 1.9rem;
+  border-radius: 50px;
+  font-weight: 550;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-primary, button {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover, button:hover {
+  background: var(--color-primary-d);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Form styling */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 550;
+  color: var(--color-text);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.3rem;
+  border: 1px solid #d0d0d0;
+  border-radius: var(--radius-sm);
+  font-size: 1.02rem;
+  transition: var(--transition);
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(92,75,153,0.14);
+}
+
+form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 1rem 5rem;
+  color: var(--color-text-light);
+  font-size: 0.96rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: 5rem;
+}
+
+/* ─── Responsive adjustments ───────────────────────────── */
+
+@media (max-width: 780px) {
+  nav ul {
+    gap: 1.8rem;
+    font-size: 0.98rem;
+  }
+
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .pdf-container embed {
+    height: 340px;
+  }
+
+  .card {
+    margin-bottom: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .pdf-container embed {
+    height: 260px;
+  }
+}
